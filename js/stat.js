@@ -9,7 +9,7 @@ var FONT_GAP = 16;
 var BAR_HEIGHT = 150;
 var BAR_WIDTH = 40;
 var BAR_GAP = 50;
-var barBottomY = CLOUD_Y + CLOUD_HEIGHT - GAP * 4;
+var barBottomY = CLOUD_Y + CLOUD_HEIGHT - GAP * 2 - FONT_GAP;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -52,6 +52,6 @@ window.renderStatistics = function (ctx, players, times) {
 
     ctx.fillStyle = '#000';
     ctx.fillText(Math.round(times[i]), currentBarX, barBottomY - currentBarHeight - GAP);
-    ctx.fillText(players[i], currentBarX, barBottomY + GAP + FONT_GAP);
+    ctx.fillText(players[i], currentBarX, barBottomY + FONT_GAP);
   }
 };
