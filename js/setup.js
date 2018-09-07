@@ -14,14 +14,18 @@ var getRandomNumber = function (minValue, maxValue) {
   return Math.floor((maxValue - minValue) * Math.random() + minValue);
 };
 
+var getRandomItemFromArray = function (array) {
+  return array[getRandomNumber(0, array.length - 1)];
+};
+
 var generateWizards = function () {
   var wizardsArray = [];
 
   for (var i = 0; i < WIZARDS_COUNT; i++) {
     var wizard = {};
-    wizard.name = NAMES[getRandomNumber(0, NAMES.length - 1)] + ' ' + SURNAMES[getRandomNumber(0, SURNAMES.length - 1)];
-    wizard.coatColor = COAT_COLORS[getRandomNumber(0, COAT_COLORS.length - 1)];
-    wizard.eyesColor = EYES_COLORS[getRandomNumber(0, EYES_COLORS.length - 1)];
+    wizard.name = getRandomItemFromArray(NAMES) + ' ' + getRandomItemFromArray(SURNAMES);
+    wizard.coatColor = getRandomItemFromArray(COAT_COLORS);
+    wizard.eyesColor = getRandomItemFromArray(EYES_COLORS);
 
     wizardsArray.push(wizard);
   }
