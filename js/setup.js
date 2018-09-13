@@ -142,17 +142,9 @@ setupClose.addEventListener('keydown', function (evt) {
 
 
 // adding listeners for changing wizard's appearance
-wizardCoatElement.addEventListener('click', function () {
-  changeWizardCoatColor();
-});
-
-wizardEyesElement.addEventListener('click', function () {
-  changeWizardEyesColor();
-});
-
-wizardFireballElement.addEventListener('click', function () {
-  changeWizardFireballColor();
-});
+wizardCoatElement.addEventListener('click', changeWizardCoatColor);
+wizardEyesElement.addEventListener('click', changeWizardEyesColor);
+wizardFireballElement.addEventListener('click', changeWizardFireballColor);
 
 
 // username validation
