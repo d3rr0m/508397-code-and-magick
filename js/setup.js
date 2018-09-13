@@ -100,19 +100,19 @@ var closePopup = function () {
 
 
 // functions for working with wizard's appearance
-var changeWizardCoatColor = function () {
+var wizardCoatClickHandler = function () {
   var coatColor = getDifferentRandomItemFromArray(COAT_COLORS, wizardCoatInput.value);
   wizardCoatElement.style.fill = coatColor;
   wizardCoatInput.value = coatColor;
 };
 
-var changeWizardEyesColor = function () {
+var wizardEyesClickHandler = function () {
   var eyesColor = getDifferentRandomItemFromArray(EYES_COLORS, wizardEyesInput.value);
   wizardEyesElement.style.fill = eyesColor;
   wizardEyesInput.value = eyesColor;
 };
 
-var changeWizardFireballColor = function () {
+var wizardFireballClickHandler = function () {
   var fireballColor = getDifferentRandomItemFromArray(FIREBALL_COLORS, wizardFireballInput.value);
   wizardFireballElement.style.backgroundColor = fireballColor;
   wizardFireballInput.value = fireballColor;
@@ -142,9 +142,9 @@ setupClose.addEventListener('keydown', function (evt) {
 
 
 // adding listeners for changing wizard's appearance
-wizardCoatElement.addEventListener('click', changeWizardCoatColor);
-wizardEyesElement.addEventListener('click', changeWizardEyesColor);
-wizardFireballElement.addEventListener('click', changeWizardFireballColor);
+wizardCoatElement.addEventListener('click', wizardCoatClickHandler);
+wizardEyesElement.addEventListener('click', wizardEyesClickHandler);
+wizardFireballElement.addEventListener('click', wizardFireballClickHandler);
 
 
 // username validation
