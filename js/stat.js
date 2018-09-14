@@ -33,7 +33,7 @@ var getMaxElement = function (arr) {
 };
 
 var getRandomNumber = function (minValue, maxValue) {
-  return Math.floor((maxValue - minValue) * Math.random() + minValue);
+  return Math.floor((maxValue + 1 - minValue) * Math.random() + minValue);
 };
 
 window.renderStatistics = function (ctx, players, times) {
