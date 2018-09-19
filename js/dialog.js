@@ -7,7 +7,7 @@
   var userNameInput = setup.querySelector('.setup-user-name');
   var dialogHandler = setup.querySelector('.upload');
 
-  var INITIAL_DIALOG_COORDS = {
+  var initialDialogCoords = {
     x: setup.style.top,
     y: setup.style.left
   };
@@ -22,8 +22,8 @@
   var openPopup = function () {
     setup.classList.remove('hidden');
 
-    setup.style.top = INITIAL_DIALOG_COORDS.x;
-    setup.style.left = INITIAL_DIALOG_COORDS.y;
+    setup.style.top = initialDialogCoords.x;
+    setup.style.left = initialDialogCoords.y;
 
     document.addEventListener('keydown', popupEscPressHandler);
   };
@@ -79,14 +79,12 @@
     var onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
 
+      dragged = true;
+
       var shift = {
         x: startCoords.x - moveEvt.clientX,
         y: startCoords.y - moveEvt.clientY
       };
-
-      if (shift.x && shift.y) {
-        dragged = true;
-      }
 
       startCoords = {
         x: moveEvt.clientX,
